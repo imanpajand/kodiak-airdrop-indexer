@@ -60,18 +60,39 @@ Subsquid docs: https://docs.sqd.dev/
 npm i -g @subsquid/cli
 ```
 
+Since we can't publish users' personal data, you must put a corresponding feedback csv in the project root, whose columns will be of this type:
+```typescript
+export type CSVData = {
+    id: string;
+    timestamp: number;
+    email: string;
+    discord: string;
+    features: string;
+    experience: string;
+    bugs: string;
+    telegram: string;
+    association: string;
+    rate: number | null;
+};
+```
+
 ```bash
-# 1. Npm install
+# 1. Copy source.csv to project root
+cp /path/to/your/source.csv ./source.csv
+```
+
+```bash
+# 2. Npm install
 npm install
 
-# 2. Re-index and run database
+# 3. Re-index and run database
 npm run again # for mac
 npm run again-win # for pc
 
 # If it breaks midway:
 node -r dotenv/config lib/main.js
 
-# 3. Use PostGreSQL IDE of choice to query the data
+# 4. Use PostGreSQL IDE of choice to query the data
 # Database info:
 # host: localhost
 # port: 5432 (or whatever your docker is using to fwd the port, check Docker)
