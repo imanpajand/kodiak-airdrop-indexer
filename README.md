@@ -61,19 +61,8 @@ npm i -g @subsquid/cli
 ```
 
 Since we can't publish users' personal data, you must put a corresponding feedback csv in the project root, whose columns will be of this type:
-```typescript
-export type CSVData = {
-    id: string;
-    timestamp: number;
-    email: string;
-    discord: string;
-    features: string;
-    experience: string;
-    bugs: string;
-    telegram: string;
-    association: string;
-    rate: number | null;
-};
+```csv
+Timestamp,Email Address,Discord handle,Wallet Address,Features Used,How was your experience using Kodiak bArtio?,Bugs found? Please also submit discord ticket so images can be attached.,Telegram username,Project/Fund/Association?,Rate your experience (1-5),Bot?,Minute
 ```
 
 ```bash
