@@ -1,0 +1,106 @@
+type Account @entity {
+    id: ID!
+    timestamp: Int
+    email: String
+    discord: String
+    features: String
+    experience: String
+    bugs: String
+    telegram: String
+    association: String
+    rate: Int
+}
+
+type Bundle @entity {
+    id: ID!
+}
+
+type Transfer @entity {
+    id: ID! # txnHash-logIndex
+    block: Int!
+    timestamp: Int!
+    token: String!
+    from: String!
+    to: String!
+    value: BigInt!
+    txnHash: String!
+    origin: String!
+}
+
+type V3Pool @entity {
+    id: ID!
+    token0: String!
+    token1: String!
+    feeTier: Int!
+    block: Int!
+    timestamp: Int!
+    txnHash: String!
+    origin: String!
+}
+
+type V2Pair @entity {
+    id: ID!
+    token0: String!
+    token1: String!
+    block: Int!
+    timestamp: Int!
+    txnHash: String!
+    origin: String!
+}
+
+type V2Swap @entity {
+    id: ID!
+    block: Int!
+    timestamp: Int!
+    pair: String!
+    sender: String!
+    to: String!
+    amount0In: BigInt!
+    amount1In: BigInt!
+    amount0Out: BigInt!
+    amount1Out: BigInt!
+    txnHash: String!
+    origin: String!
+}
+
+type V3Swap @entity {
+    id: ID!
+    block: Int!
+    timestamp: Int!
+    pair: String!
+    sender: String!
+    to: String!
+    amount0In: BigInt!
+    amount1In: BigInt!
+    amount0Out: BigInt!
+    amount1Out: BigInt!
+    txnHash: String!
+    origin: String!
+}
+
+type BGTActivate @entity {
+    id: ID!
+    sender: String!
+    amount: BigInt!
+    txnHash: String!
+    block: Int!
+    timestamp: Int!
+    origin: String!
+}
+
+type BGTRemove @entity {
+    id: ID!
+    sender: String!
+    amount: BigInt!
+    txnHash: String!
+    block: Int!
+    timestamp: Int!
+    origin: String!
+}
+
+type Token @entity {
+    id: ID!
+    price: BigDecimal!
+    decimals: Int!
+    whitelist: Boolean
+}
